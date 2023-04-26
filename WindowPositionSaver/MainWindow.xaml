@@ -1,0 +1,45 @@
+﻿<Window x:Class="WindowPositionSaver.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Window Position Saver" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Open Windows" Grid.Row="0" Grid.Column="0" />
+        <Label Content="Layouts" Grid.Row="0" Grid.Column="1" />
+
+        <TabControl Grid.Row="1" Grid.ColumnSpan="2">
+            <TabItem Header="Open Windows">
+                <ListView x:Name="WindowListView" />
+            </TabItem>
+            <TabItem Header="Layouts">
+                <ListBox x:Name="LayoutListBox" />
+            </TabItem>
+            <TabItem Header="Settings">
+                <!-- Settings UI components go here -->
+            </TabItem>
+        </TabControl>
+
+        <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
+            <Button x:Name="SaveLayoutButton" Content="Save Layout" />
+            <Button x:Name="UpdateLayoutButton" Content="Update Layout" />
+            <Button x:Name="DeleteLayoutButton" Content="Delete Layout" />
+            <Button x:Name="RefreshButton" Content="Refresh" />
+            <Button x:Name="SearchButton" Content="Search" />
+            <Button x:Name="ImportExportButton" Content="Import/Export" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+            <Button x:Name="UndoButton" Content="Undo" />
+            <Button x:Name="RedoButton" Content="Redo" />
+        </StackPanel>
+    </Grid>
+</Window>
